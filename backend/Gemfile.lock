@@ -69,6 +69,8 @@ GEM
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
     json (1.8.3)
+    jsonapi-resources (0.6.1)
+      rails (>= 4.0)
     launchy (2.4.3)
       addressable (~> 2.3)
     loofah (2.0.3)
@@ -181,6 +183,7 @@ DEPENDENCIES
   factory_girl_rails
   fuubar
   jbuilder (~> 2.0)
+  jsonapi-resources
   launchy
   pg
   pry-rails
