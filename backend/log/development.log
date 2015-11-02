@@ -789,3 +789,228 @@ Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-01 16:04:27 -0500
 Processing by Api::V1::JokesController#index as JSON
   [1m[36mJoke Load (0.6ms)[0m  [1mSELECT "jokes".* FROM "jokes"[0m
 Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2015-11-02 10:52:55 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/JGert/.gem/ruby/2.1.5/gems/railties-4.2.4/lib/rails/templates/rails/welcome/index.html.erb (99.4ms)
+Completed 200 OK in 1114ms (Views: 1113.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-02 10:53:06 -0500
+Processing by Api::V1::JokesController#index as JSON
+  [1m[35mJoke Load (0.7ms)[0m  SELECT "jokes".* FROM "jokes"
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-02 10:53:59 -0500
+Processing by Api::V1::JokesController#index as JSON
+  [1m[36mJoke Load (0.5ms)[0m  [1mSELECT "jokes".* FROM "jokes"[0m
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2015-11-02 12:22:18 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/JGert/.gem/ruby/2.1.5/gems/railties-4.2.4/lib/rails/templates/rails/welcome/index.html.erb (0.5ms)
+Completed 200 OK in 45ms (Views: 44.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-02 12:22:24 -0500
+Processing by Api::V1::JokesController#index as JSON
+  [1m[35mJoke Load (1.2ms)[0m  SELECT "jokes".* FROM "jokes"
+Completed 200 OK in 35ms (Views: 28.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-02 12:22:27 -0500
+Processing by Api::V1::JokesController#index as JSON
+  [1m[36mJoke Load (0.5ms)[0m  [1mSELECT "jokes".* FROM "jokes"[0m
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-02 12:22:35 -0500
+Processing by Api::V1::JokesController#index as JSON
+  [1m[35mJoke Load (0.4ms)[0m  SELECT "jokes".* FROM "jokes"
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/jokes/2" for 127.0.0.1 at 2015-11-02 12:22:46 -0500
+Processing by Api::V1::JokesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mJoke Load (57.5ms)[0m  [1mSELECT  "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 697ms (Views: 1.3ms | ActiveRecord: 58.0ms)
+
+
+Started GET "/api/v1/jokes/2" for 127.0.0.1 at 2015-11-02 12:22:51 -0500
+Processing by Api::V1::JokesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[35mJoke Load (0.6ms)[0m  SELECT  "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1  [["id", 2]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/jokes/2" for 127.0.0.1 at 2015-11-02 12:23:17 -0500
+Processing by Api::V1::JokesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mJoke Load (0.5ms)[0m  [1mSELECT  "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/jokes/2" for 127.0.0.1 at 2015-11-02 12:23:33 -0500
+Processing by Api::V1::JokesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[35mJoke Load (0.4ms)[0m  SELECT  "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1  [["id", 2]]
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/jokes/2" for 127.0.0.1 at 2015-11-02 12:23:38 -0500
+Processing by Api::V1::JokesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mJoke Load (0.4ms)[0m  [1mSELECT  "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/jokes/2" for 127.0.0.1 at 2015-11-02 12:23:40 -0500
+Processing by Api::V1::JokesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[35mJoke Load (0.3ms)[0m  SELECT  "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1  [["id", 2]]
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/jokes/2" for 127.0.0.1 at 2015-11-02 12:25:55 -0500
+Processing by Api::V1::JokesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mJoke Load (0.3ms)[0m  [1mSELECT  "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/jokes/2" for 127.0.0.1 at 2015-11-02 12:26:08 -0500
+Processing by Api::V1::JokesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[35mJoke Load (0.2ms)[0m  SELECT  "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1  [["id", 2]]
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/jokes/2" for 127.0.0.1 at 2015-11-02 12:26:50 -0500
+Processing by Api::V1::JokesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mJoke Load (0.3ms)[0m  [1mSELECT  "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/jokes/2" for 127.0.0.1 at 2015-11-02 12:26:52 -0500
+Processing by Api::V1::JokesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[35mJoke Load (0.2ms)[0m  SELECT  "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1  [["id", 2]]
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/jokes/2" for 127.0.0.1 at 2015-11-02 12:27:12 -0500
+Processing by Api::V1::JokesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mJoke Load (0.3ms)[0m  [1mSELECT  "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/jokes/2" for 127.0.0.1 at 2015-11-02 12:27:14 -0500
+Processing by Api::V1::JokesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[35mJoke Load (0.4ms)[0m  SELECT  "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1  [["id", 2]]
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/jokes/2" for 127.0.0.1 at 2015-11-02 12:27:20 -0500
+Processing by Api::V1::JokesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mJoke Load (0.2ms)[0m  [1mSELECT  "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/jokes/2" for 127.0.0.1 at 2015-11-02 12:27:47 -0500
+Processing by Api::V1::JokesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[35mJoke Load (0.2ms)[0m  SELECT  "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1  [["id", 2]]
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/jokes/2" for 127.0.0.1 at 2015-11-02 12:27:54 -0500
+Processing by Api::V1::JokesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mJoke Load (0.3ms)[0m  [1mSELECT  "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/jokes/2" for 127.0.0.1 at 2015-11-02 12:31:52 -0500
+Processing by Api::V1::JokesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[35mJoke Load (0.4ms)[0m  SELECT  "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1  [["id", 2]]
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/jokes/2" for 127.0.0.1 at 2015-11-02 12:32:00 -0500
+Processing by Api::V1::JokesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mJoke Load (0.3ms)[0m  [1mSELECT  "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/jokes/2" for 127.0.0.1 at 2015-11-02 12:32:15 -0500
+Processing by Api::V1::JokesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[35mJoke Load (0.2ms)[0m  SELECT  "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1  [["id", 2]]
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/jokes/2" for 127.0.0.1 at 2015-11-02 12:32:26 -0500
+Processing by Api::V1::JokesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mJoke Load (0.3ms)[0m  [1mSELECT  "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/jokes/2" for 127.0.0.1 at 2015-11-02 12:32:30 -0500
+Processing by Api::V1::JokesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[35mJoke Load (0.3ms)[0m  SELECT  "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1  [["id", 2]]
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-02 12:35:38 -0500
+Processing by Api::V1::JokesController#index as JSON
+  [1m[36mJoke Load (0.7ms)[0m  [1mSELECT "jokes".* FROM "jokes"[0m
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/jokes/3" for 127.0.0.1 at 2015-11-02 12:37:57 -0500
+Processing by Api::V1::JokesController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[35mJoke Load (0.5ms)[0m  SELECT  "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1  [["id", 3]]
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-02 12:37:58 -0500
+Processing by Api::V1::JokesController#index as JSON
+  [1m[36mJoke Load (0.4ms)[0m  [1mSELECT "jokes".* FROM "jokes"[0m
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-02 12:38:17 -0500
+Processing by Api::V1::JokesController#index as JSON
+  [1m[35mJoke Load (0.5ms)[0m  SELECT "jokes".* FROM "jokes"
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-02 12:38:44 -0500
+Processing by Api::V1::JokesController#index as JSON
+  [1m[36mJoke Load (0.6ms)[0m  [1mSELECT "jokes".* FROM "jokes"[0m
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-02 12:43:15 -0500
+Processing by Api::V1::JokesController#index as JSON
+  [1m[35mJoke Load (0.5ms)[0m  SELECT "jokes".* FROM "jokes"
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-02 12:44:13 -0500
+Processing by Api::V1::JokesController#index as JSON
+  [1m[36mJoke Load (0.6ms)[0m  [1mSELECT "jokes".* FROM "jokes"[0m
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.6ms)
