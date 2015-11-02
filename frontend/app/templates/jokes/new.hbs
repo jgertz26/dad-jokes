@@ -1,0 +1,15 @@
+<div class="container text-center">
+  <div class="well">
+    <form {{action 'newJoke' model on='submit'}}>
+      <div>
+        {{textarea class="form-control" placeholder="Setup" value=setup}}
+      </div>
+      <div>
+        {{textarea class="form-control" placeholder="Punchline" value=punchline}}
+      </div>
+      <div>
+        <input type="Submit" class="button">
+      </div>
+    </form>
+  </div>
+</div>
