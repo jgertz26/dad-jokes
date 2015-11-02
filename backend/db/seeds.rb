@@ -1,7 +1,20 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+Joke.create(
+  setup: 'A roast beef sandwich walks into a bar',
+  punchline: 'The bartender says "Sorry, we don\'t serve food in here"'
+)
+
+Joke.create(
+  setup: 'Did you hear about the Hispanic train thief?',
+  punchline: 'He had loco motives.'
+)
+
+Joke.create(
+  setup: 'Why did the scarecrow win an award?',
+  punchline: 'Because he was outstanding in his field.'
+)
+
+Joke.create(
+  setup: 'Jim: "I think that was the most beautiful wedding I\'ve been to."
+          Sally: "Why\'s that?"',
+  punchline: 'Jim: "Even the cake was in tiers!"'
+)
