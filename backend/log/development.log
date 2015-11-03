@@ -2890,3 +2890,10 @@ ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticit
   Rendered /Users/JGert/.gem/ruby/2.1.5/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.0ms)
   Rendered /Users/JGert/.gem/ruby/2.1.5/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (26.8ms)
 Cannot render console with content type application/vnd.api+jsonAllowed content types: [#<Mime::Type:0x007fb6939d1948 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x007fb6939d16a0 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x007fb6939daa98 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-02 20:46:07 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::JokesController#index as API_JSON
+  [1m[35mJoke Load (0.6ms)[0m  SELECT "jokes".* FROM "jokes"  ORDER BY "jokes"."id" ASC
+Completed 200 OK in 21ms (Views: 0.5ms | ActiveRecord: 4.3ms)
