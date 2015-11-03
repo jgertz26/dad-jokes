@@ -10,10 +10,9 @@ export default Ember.Controller.extend({
         setup: setup,
         punchline: punchline
       });
-      debugger;
       joke.save().then(function() {
         this.transitionTo('jokes.show', joke);
-      })
+      });
     }
   }
 });
