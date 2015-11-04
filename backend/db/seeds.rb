@@ -18,3 +18,8 @@ Joke.create(
  'Sally: "Why\'s that?"'),
   punchline: 'Jim: "Even the cake was in tiers!"'
 )
+
+Joke.create(
+  setup: 'My father was reversing his car out of the driveway',
+  punchline: 'He says to me "This really takes me back"'
+)

@@ -4243,3 +4243,35 @@ Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-04 13:51:19 -0500
 Processing by Api::V1::JokesController#index as API_JSON
   [1m[35mJoke Load (0.5ms)[0m  SELECT "jokes".* FROM "jokes"  ORDER BY "jokes"."id" ASC
 Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+  [1m[36m (804.3ms)[0m  [1mDROP DATABASE IF EXISTS "dad-jokes_development"[0m
+  [1m[35m (219.9ms)[0m  DROP DATABASE IF EXISTS "dad-jokes_test"
+  [1m[36m (1285.5ms)[0m  [1mCREATE DATABASE "dad-jokes_development" ENCODING = 'unicode'[0m
+  [1m[35m (249.9ms)[0m  CREATE DATABASE "dad-jokes_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.7ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (11.8ms)[0m  CREATE TABLE "jokes" ("id" serial primary key, "setup" character varying NOT NULL, "punchline" character varying NOT NULL) 
+  [1m[36m (14.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (3.1ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.6ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151031210610')
+  [1m[36mSQL (0.4ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (767.0ms)[0m  CREATE TABLE "jokes" ("id" serial primary key, "setup" character varying NOT NULL, "punchline" character varying NOT NULL) 
+  [1m[36m (55.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (29.0ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.6ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151031210610')
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "jokes" ("setup", "punchline") VALUES ($1, $2) RETURNING "id"[0m  [["setup", "A roast beef sandwich walks into a bar"], ["punchline", "The bartender says \"Sorry, we don't serve food in here\""]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "jokes" ("setup", "punchline") VALUES ($1, $2) RETURNING "id"  [["setup", "Did you hear about the Hispanic train thief?"], ["punchline", "He had loco motives."]]
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "jokes" ("setup", "punchline") VALUES ($1, $2) RETURNING "id"[0m  [["setup", "Why did the scarecrow win an award?"], ["punchline", "Because he was outstanding in his field."]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "jokes" ("setup", "punchline") VALUES ($1, $2) RETURNING "id"  [["setup", "Jim: \"I think that was the most beautiful wedding I've been to.\"Sally: \"Why's that?\""], ["punchline", "Jim: \"Even the cake was in tiers!\""]]
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "jokes" ("setup", "punchline") VALUES ($1, $2) RETURNING "id"[0m  [["setup", "My father was reversing his car out of the driveway"], ["punchline", "He says to me \"This really takes me back\""]]
+  [1m[35m (1.1ms)[0m  COMMIT
