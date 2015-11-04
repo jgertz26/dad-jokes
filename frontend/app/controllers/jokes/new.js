@@ -4,14 +4,18 @@ export default Ember.Controller.extend({
   actions: {
     newJoke: function() {
 
-      var setup = this.get('setup');
-      var punchline = this.get('punchline');
-      var joke = this.store.createRecord('joke', {
+      const setup = this.get('setup');
+      const punchline = this.get('punchline');
+      const joke = this.store.createRecord('joke', {
         setup: setup,
         punchline: punchline
       });
+
+
       joke.save().then(function() {
         this.transitionTo('jokes.show', joke);
+      }).catch(function(){
+        this.set('validationErrors', ["Please enter in all the fields!"]);
       });
     }
   }

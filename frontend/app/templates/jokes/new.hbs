@@ -1,4 +1,9 @@
 <div class="container text-center">
+  {{#each validationErrors as |error|}}
+    <div role="alert">
+      {{error}}
+    </div>
+  {{/each}}
   <div class="well">
     <form {{action 'newJoke' model on='submit'}}>
       <div>
