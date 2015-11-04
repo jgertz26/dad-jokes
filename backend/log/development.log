@@ -4599,3 +4599,45 @@ Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-04 16:23:49 -0500
 Processing by Api::V1::JokesController#index as API_JSON
   [1m[36mJoke Load (0.5ms)[0m  [1mSELECT "jokes".* FROM "jokes"  ORDER BY "jokes"."id" ASC[0m
 Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-04 18:21:38 -0500
+Processing by Api::V1::JokesController#index as API_JSON
+  [1m[35mJoke Load (0.9ms)[0m  SELECT "jokes".* FROM "jokes"  ORDER BY "jokes"."id" ASC
+Completed 200 OK in 23ms (Views: 2.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-04 18:21:42 -0500
+Processing by Api::V1::JokesController#index as API_JSON
+  [1m[36mJoke Load (0.4ms)[0m  [1mSELECT "jokes".* FROM "jokes"  ORDER BY "jokes"."id" ASC[0m
+Completed 200 OK in 7ms (Views: 1.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-04 18:22:07 -0500
+Processing by Api::V1::JokesController#index as API_JSON
+  [1m[35mJoke Load (0.5ms)[0m  SELECT "jokes".* FROM "jokes"  ORDER BY "jokes"."id" ASC
+Completed 200 OK in 9ms (Views: 1.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-04 18:22:31 -0500
+Processing by Api::V1::JokesController#index as API_JSON
+  [1m[36mJoke Load (0.4ms)[0m  [1mSELECT "jokes".* FROM "jokes"  ORDER BY "jokes"."id" ASC[0m
+Completed 200 OK in 12ms (Views: 1.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-04 18:22:56 -0500
+Processing by Api::V1::JokesController#index as API_JSON
+  [1m[35mJoke Load (0.4ms)[0m  SELECT "jokes".* FROM "jokes"  ORDER BY "jokes"."id" ASC
+Completed 200 OK in 10ms (Views: 1.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-04 18:23:12 -0500
+Processing by Api::V1::JokesController#index as API_JSON
+  [1m[36mJoke Load (0.4ms)[0m  [1mSELECT "jokes".* FROM "jokes"  ORDER BY "jokes"."id" ASC[0m
+Completed 200 OK in 10ms (Views: 1.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-04 18:23:16 -0500
+Processing by Api::V1::JokesController#index as API_JSON
+  [1m[35mJoke Load (0.7ms)[0m  SELECT "jokes".* FROM "jokes"  ORDER BY "jokes"."id" ASC
+Completed 200 OK in 11ms (Views: 1.3ms | ActiveRecord: 0.7ms)

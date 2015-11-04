@@ -54,3 +54,12 @@ nav li {
 .edit-button {
   float: right
 }
+
+.homepage {
+  text-align: center;
+  margin: 30px;
+}
+
+.homepage a {
+  font-size: 20pt;
+}
