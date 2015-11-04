@@ -18,3 +18,4 @@ To start up the server go to the root directory and run `rake run`
 * Add user authentication
 * Create comment functionality
 * Explore ember front end tests
+* Explore ember add ons
