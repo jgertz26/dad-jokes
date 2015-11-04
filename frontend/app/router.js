@@ -9,6 +9,8 @@ Router.map(function() {
   this.route('jokes', function() {
     this.route('show', { path: ':joke_id' });
     this.route('new');
+    this.route('edit', { path: ':joke_id/edit' });
+    this.route('delete', { path: ':joke_id/delete' });
   });
 });
 
