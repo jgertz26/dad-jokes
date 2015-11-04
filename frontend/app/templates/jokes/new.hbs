@@ -4,6 +4,8 @@
       {{error}}
     </div>
   {{/each}}
+
+  <h3>Submit a new Dad Joke</h3>
   <div class="well">
     <form {{action 'newJoke' model on='submit'}}>
       <div>
@@ -18,3 +20,5 @@
     </form>
   </div>
 </div>
+<br>
+{{link-to "Back to Jokes" "jokes"}}
