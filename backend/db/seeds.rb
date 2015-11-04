@@ -14,7 +14,7 @@ Joke.create(
 )
 
 Joke.create(
-  setup: 'Jim: "I think that was the most beautiful wedding I\'ve been to."
-          Sally: "Why\'s that?"',
+  setup: ('Jim: "I think that was the most beautiful wedding I\'ve been to."'+
+ 'Sally: "Why\'s that?"'),
   punchline: 'Jim: "Even the cake was in tiers!"'
 )
