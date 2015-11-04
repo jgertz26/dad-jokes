@@ -1,24 +1,22 @@
-<div class="container text-center">
-  {{#each validationErrors as |error|}}
-    <div role="alert">
-      {{error}}
-    </div>
-  {{/each}}
-
-  <h3>Submit a new Dad Joke</h3>
-  <div class="well">
-    <form {{action 'newJoke' model on='submit'}}>
-      <div>
-        {{textarea class="form-control" placeholder="Setup" value=setup}}
-      </div>
-      <div>
-        {{textarea class="form-control" placeholder="Punchline" value=punchline}}
-      </div>
-      <div>
-        <input type="Submit" class="button">
-      </div>
-    </form>
+{{#each validationErrors as |error|}}
+  <div role="alert">
+    {{error}}
   </div>
+{{/each}}
+
+<h3>Submit a new Dad Joke</h3>
+<div class="well">
+  <form {{action 'newJoke' model on='submit'}}>
+    <div>
+      {{textarea class="form-control" placeholder="Setup" value=setup}}
+    </div>
+    <div>
+      {{textarea class="form-control" placeholder="Punchline" value=punchline}}
+    </div>
+    <div>
+      <input type="Submit" class="button">
+    </div>
+  </form>
 </div>
 <br>
 

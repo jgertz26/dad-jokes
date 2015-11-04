@@ -28,3 +28,12 @@
 </div>
 <br>
 {{link-to "Back to joke" 'jokes.show' joke}}
+<br>
+
+<form {{action 'deleteJoke' model on='submit'}}>
+
+  <div>
+    <input type="Submit" class="button" value="DELETE FOREVER">
+  </div>
+
+</form>

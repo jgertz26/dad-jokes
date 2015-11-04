@@ -24,6 +24,14 @@ export default Ember.Controller.extend({
       }).catch(function(){
         thisPage.set('validationErrors', ["Please enter in all the fields!"]);
       });
+    },
+
+    deleteJoke: function() {
+      var jokeId = location.pathname.split('/')[2]
+      this.store.findRecord('joke', jokeId).then(function(joke) {
+        joke.destroyRecord();
+      });
+      this.transitionToRoute('jokes');
     }
   }
 });
