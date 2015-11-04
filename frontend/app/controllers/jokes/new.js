@@ -10,8 +10,13 @@ export default Ember.Controller.extend({
         setup: setup,
         punchline: punchline
       });
-      joke.save().then(function() {
-        this.transitionTo('jokes.show', joke);
+
+      var thisPage = this
+
+      joke.save().then(() => {
+        this.transitionToRoute('jokes.show', joke);
+      }).catch(function(){
+        thisPage.set('validationErrors', ["Please enter in all the fields!"]);
       });
     }
   }
