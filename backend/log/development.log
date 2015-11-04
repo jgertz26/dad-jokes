@@ -4585,3 +4585,17 @@ Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-04 14:27:30 -0500
 Processing by Api::V1::JokesController#index as API_JSON
   [1m[35mJoke Load (0.7ms)[0m  SELECT "jokes".* FROM "jokes"  ORDER BY "jokes"."id" ASC
 Completed 200 OK in 8ms (Views: 0.7ms | ActiveRecord: 0.7ms)
+  [1m[36m (254.4ms)[0m  [1mDROP DATABASE IF EXISTS "dad-jokes_test"[0m
+  [1m[35m (1094.3ms)[0m  CREATE DATABASE "dad-jokes_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (26.0ms)[0m  CREATE TABLE "jokes" ("id" serial primary key, "setup" character varying NOT NULL, "punchline" character varying NOT NULL) 
+  [1m[36m (5.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (2.9ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.4ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151031210610')
+
+
+Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-04 16:23:49 -0500
+Processing by Api::V1::JokesController#index as API_JSON
+  [1m[36mJoke Load (0.5ms)[0m  [1mSELECT "jokes".* FROM "jokes"  ORDER BY "jokes"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.5ms)
