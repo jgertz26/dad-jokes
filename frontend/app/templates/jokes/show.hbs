@@ -1,6 +1,8 @@
 <div class="joke-show">
-  {{model.setup}}<br>
+  {{model.setup}}<br><br>
   {{model.punchline}}
 </div>
 <br>
-{{link-to "Edit this joke" 'jokes.edit' joke}}
+<div class="edit-button">
+  {{link-to "Edit this joke" 'jokes.edit' joke}}
+</div>

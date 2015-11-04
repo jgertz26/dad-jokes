@@ -2,7 +2,7 @@
 
 <div class="jokes-container">
   {{#each model as |joke|}}
-    <div class="well">
+    <div>
       <p>{{link-to (format-setup joke.setup) 'jokes.show' joke}}</p>
     </div>
   {{/each}}

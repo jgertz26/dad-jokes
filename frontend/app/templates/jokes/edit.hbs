@@ -7,15 +7,15 @@
 <h3>
   Edit Joke
 </h3>
-<div class="form">
+<div class="edit-form">
   <form {{action 'editJoke' model on='submit'}}>
 
-    <div class="form-input">
+    <div>
       <div>Setup:</div>
       {{textarea class="form-control" value=model.setup}}
     </div>
 
-    <div class="form-input">
+    <div>
       <div>Punchline:</div>
       {{textarea class="form-control" value=model.punchline}}
     </div>
@@ -25,15 +25,14 @@
     </div>
 
   </form>
-</div>
+
 <br>
 {{link-to "Back to joke" 'jokes.show' joke}}
-<br>
+</div>
 
-<form {{action 'deleteJoke' model on='submit'}}>
 
-  <div>
-    <input type="Submit" class="button" value="DELETE FOREVER">
-  </div>
-
-</form>
+<div class="delete-button">
+  <form {{action 'deleteJoke' model on='submit'}}>
+      <input type="Submit" class="button" value="DELETE FOREVER">
+  </form>
+</div>

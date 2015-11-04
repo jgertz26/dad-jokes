@@ -22,3 +22,35 @@ nav li {
 .nav-title {
   float: left;
 }
+
+.joke-show {
+  text-align: center;
+  font-size: 14pt;
+  padding: 20px;
+}
+
+.form-control {
+  width: 250px;
+  height: 75px;
+  margin-bottom: 20px;
+}
+
+.main-container {
+  margin: 0px 20px;
+}
+
+.edit-form {
+  display: inline-block;
+  float: left;
+  width: 70%;
+}
+
+.delete-button {
+  display: inline-block;
+  float: right;
+  width: 20%;
+}
+
+.edit-button {
+  float: right
+}
