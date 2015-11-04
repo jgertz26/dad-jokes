@@ -6,7 +6,6 @@ export function formatSetup(params/*, hash*/) {
   if (params[0].length > 40) {
     string = string.concat("...")
   };
-  debugger;
   return string
 }
 
