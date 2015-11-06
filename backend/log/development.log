@@ -4641,3 +4641,270 @@ Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-04 18:23:16 -0500
 Processing by Api::V1::JokesController#index as API_JSON
   [1m[35mJoke Load (0.7ms)[0m  SELECT "jokes".* FROM "jokes"  ORDER BY "jokes"."id" ASC
 Completed 200 OK in 11ms (Views: 1.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2015-11-06 13:39:24 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/JGert/.gem/ruby/2.1.5/gems/railties-4.2.4/lib/rails/templates/rails/welcome/index.html.erb (19.3ms)
+Completed 200 OK in 242ms (Views: 241.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-06 13:40:13 -0500
+Processing by Api::V1::JokesController#index as API_JSON
+  [1m[35mJoke Load (0.7ms)[0m  SELECT "jokes".* FROM "jokes"  ORDER BY "jokes"."id" ASC
+Completed 200 OK in 68ms (Views: 0.6ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-06 14:25:01 -0500
+Processing by Api::V1::JokesController#index as API_JSON
+  [1m[36mJoke Load (0.3ms)[0m  [1mSELECT "jokes".* FROM "jokes"  ORDER BY "jokes"."id" ASC[0m
+Completed 200 OK in 99ms (Views: 0.6ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/api/v1/jokes" for 127.0.0.1 at 2015-11-06 14:28:47 -0500
+Processing by Api::V1::JokesController#create as API_JSON
+  Parameters: {"data"=>{"attributes"=>{"setup"=>nil, "punchline"=>nil}, "type"=>"jokes"}, :controller=>"api/v1/jokes", :action=>"create"}
+Can't verify CSRF token authenticity
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Completed 422 Unprocessable Entity in 40ms (Views: 0.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/jokes" for 127.0.0.1 at 2015-11-06 14:29:05 -0500
+Processing by Api::V1::JokesController#create as API_JSON
+  Parameters: {"data"=>{"attributes"=>{"setup"=>"jjoijlkjlkj;kj;klj", "punchline"=>"oijojjjk"}, "type"=>"jokes"}, :controller=>"api/v1/jokes", :action=>"create"}
+Can't verify CSRF token authenticity
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "jokes" ("setup", "punchline") VALUES ($1, $2) RETURNING "id"[0m  [["setup", "jjoijlkjlkj;kj;klj"], ["punchline", "oijojjjk"]]
+  [1m[35m (1.3ms)[0m  COMMIT
+Completed 201 Created in 35ms (Views: 0.3ms | ActiveRecord: 2.4ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddRatingToJokes (20151106193039)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (47.8ms)[0m  [1mALTER TABLE "jokes" ADD "rating" integer[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151106193039"]]
+  [1m[36m (1.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (22.9ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'jokes'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddRatingToJokes (20151106193039)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (41.3ms)[0m  ALTER TABLE "jokes" DROP "rating"
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20151106193039"]]
+  [1m[35m (6.0ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (3.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'jokes'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddRatingToJokes (20151106193039)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "jokes" ADD "rating" integer[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151106193039"]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (3.9ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'jokes'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36m (367.7ms)[0m  [1mDROP DATABASE IF EXISTS "dad-jokes_development"[0m
+  [1m[35m (236.1ms)[0m  DROP DATABASE IF EXISTS "dad-jokes_test"
+  [1m[36m (1261.9ms)[0m  [1mCREATE DATABASE "dad-jokes_development" ENCODING = 'unicode'[0m
+  [1m[35m (364.4ms)[0m  CREATE DATABASE "dad-jokes_test" ENCODING = 'unicode'
+  [1m[36mSQL (28.7ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (128.0ms)[0m  CREATE TABLE "jokes" ("id" serial primary key, "setup" character varying NOT NULL, "punchline" character varying NOT NULL, "rating" integer) 
+  [1m[36m (4.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (25.2ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.4ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151106193039')
+  [1m[36m (1.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151031210610')[0m
+  [1m[35mSQL (0.4ms)[0m  CREATE EXTENSION IF NOT EXISTS "plpgsql"
+  [1m[36m (11.2ms)[0m  [1mCREATE TABLE "jokes" ("id" serial primary key, "setup" character varying NOT NULL, "punchline" character varying NOT NULL, "rating" integer) [0m
+  [1m[35m (5.2ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (2.9ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.5ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151106193039')[0m
+  [1m[35m (1.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151031210610')
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "jokes" ("setup", "punchline", "rating") VALUES ($1, $2, $3) RETURNING "id"[0m  [["setup", "A roast beef sandwich walks into a bar"], ["punchline", "The bartender says \"Sorry, we don't serve food in here\""], ["rating", 5]]
+  [1m[35m (2.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "jokes" ("setup", "punchline", "rating") VALUES ($1, $2, $3) RETURNING "id"  [["setup", "Did you hear about the Hispanic train thief?"], ["punchline", "He had loco motives."], ["rating", 5]]
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "jokes" ("setup", "punchline", "rating") VALUES ($1, $2, $3) RETURNING "id"[0m  [["setup", "Why did the scarecrow win an award?"], ["punchline", "Because he was outstanding in his field."], ["rating", 5]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "jokes" ("setup", "punchline", "rating") VALUES ($1, $2, $3) RETURNING "id"  [["setup", "Jim: \"I think that was the most beautiful wedding I've been to.\" Sally: \"Why's that?\""], ["punchline", "Jim: \"Even the cake was in tiers!\""], ["rating", 5]]
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "jokes" ("setup", "punchline", "rating") VALUES ($1, $2, $3) RETURNING "id"[0m  [["setup", "My father was reversing his car out of the driveway"], ["punchline", "He says to me \"This really takes me back\""], ["rating", 5]]
+  [1m[35m (1.2ms)[0m  COMMIT
+
+
+Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-06 14:35:24 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::JokesController#index as API_JSON
+  [1m[35mJoke Load (0.8ms)[0m  SELECT "jokes".* FROM "jokes"  ORDER BY "jokes"."id" ASC
+Completed 200 OK in 23ms (Views: 1.1ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-06 14:37:58 -0500
+Processing by Api::V1::JokesController#index as API_JSON
+  [1m[36mJoke Load (0.3ms)[0m  [1mSELECT "jokes".* FROM "jokes"  ORDER BY "jokes"."id" ASC[0m
+Completed 200 OK in 12ms (Views: 0.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-06 14:38:47 -0500
+Processing by Api::V1::JokesController#index as API_JSON
+  [1m[35mJoke Load (0.5ms)[0m  SELECT "jokes".* FROM "jokes"  ORDER BY "jokes"."id" ASC
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-06 14:39:11 -0500
+Processing by Api::V1::JokesController#index as API_JSON
+  [1m[36mJoke Load (0.4ms)[0m  [1mSELECT "jokes".* FROM "jokes"  ORDER BY "jokes"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-06 14:39:15 -0500
+Processing by Api::V1::JokesController#index as API_JSON
+  [1m[35mJoke Load (0.3ms)[0m  SELECT "jokes".* FROM "jokes"  ORDER BY "jokes"."id" ASC
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-06 14:39:37 -0500
+Processing by Api::V1::JokesController#index as API_JSON
+  [1m[36mJoke Load (0.4ms)[0m  [1mSELECT "jokes".* FROM "jokes"  ORDER BY "jokes"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-06 14:39:49 -0500
+Processing by Api::V1::JokesController#index as API_JSON
+  [1m[35mJoke Load (0.4ms)[0m  SELECT "jokes".* FROM "jokes"  ORDER BY "jokes"."id" ASC
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-06 14:40:01 -0500
+Processing by Api::V1::JokesController#index as API_JSON
+  [1m[36mJoke Load (0.4ms)[0m  [1mSELECT "jokes".* FROM "jokes"  ORDER BY "jokes"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/jokes" for 127.0.0.1 at 2015-11-06 14:40:12 -0500
+Processing by Api::V1::JokesController#create as API_JSON
+  Parameters: {"data"=>{"attributes"=>{"setup"=>"etbrsynw", "punchline"=>"tybwruneutje", "rating"=>5}, "type"=>"jokes"}, :controller=>"api/v1/jokes", :action=>"create"}
+Can't verify CSRF token authenticity
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "jokes" ("setup", "punchline", "rating") VALUES ($1, $2, $3) RETURNING "id"[0m  [["setup", "etbrsynw"], ["punchline", "tybwruneutje"], ["rating", 5]]
+  [1m[35m (1236.4ms)[0m  COMMIT
+Completed 201 Created in 1327ms (Views: 0.3ms | ActiveRecord: 1237.7ms)
+
+
+Started GET "/api/v1/jokes/6" for 127.0.0.1 at 2015-11-06 14:41:02 -0500
+Processing by Api::V1::JokesController#show as API_JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mJoke Load (0.3ms)[0m  [1mSELECT  "jokes".* FROM "jokes" WHERE "jokes"."id" = $1  ORDER BY "jokes"."id" ASC LIMIT 1[0m  [["id", 6]]
+Completed 200 OK in 28ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-06 14:41:14 -0500
+Processing by Api::V1::JokesController#index as API_JSON
+  [1m[35mJoke Load (0.4ms)[0m  SELECT "jokes".* FROM "jokes"  ORDER BY "jokes"."id" ASC
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-06 14:41:26 -0500
+Processing by Api::V1::JokesController#index as API_JSON
+  [1m[36mJoke Load (0.4ms)[0m  [1mSELECT "jokes".* FROM "jokes"  ORDER BY "jokes"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+  [1m[36m (190.3ms)[0m  [1mDROP DATABASE IF EXISTS "dad-jokes_development"[0m
+  [1m[35m (194.7ms)[0m  DROP DATABASE IF EXISTS "dad-jokes_test"
+  [1m[36m (917.0ms)[0m  [1mCREATE DATABASE "dad-jokes_development" ENCODING = 'unicode'[0m
+  [1m[35m (273.2ms)[0m  CREATE DATABASE "dad-jokes_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (9.8ms)[0m  CREATE TABLE "jokes" ("id" serial primary key, "setup" character varying NOT NULL, "punchline" character varying NOT NULL, "rating" integer) 
+  [1m[36m (7.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (3.2ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.6ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151106193039')
+  [1m[36m (1.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151031210610')[0m
+  [1m[35mSQL (0.4ms)[0m  CREATE EXTENSION IF NOT EXISTS "plpgsql"
+  [1m[36m (10.7ms)[0m  [1mCREATE TABLE "jokes" ("id" serial primary key, "setup" character varying NOT NULL, "punchline" character varying NOT NULL, "rating" integer) [0m
+  [1m[35m (4.8ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (3.5ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.7ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151106193039')[0m
+  [1m[35m (1.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151031210610')
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "jokes" ("setup", "punchline", "rating") VALUES ($1, $2, $3) RETURNING "id"[0m  [["setup", "A roast beef sandwich walks into a bar"], ["punchline", "The bartender says \"Sorry, we don't serve food in here\""], ["rating", 1]]
+  [1m[35m (3.0ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "jokes" ("setup", "punchline", "rating") VALUES ($1, $2, $3) RETURNING "id"  [["setup", "Did you hear about the Hispanic train thief?"], ["punchline", "He had loco motives."], ["rating", 4]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "jokes" ("setup", "punchline", "rating") VALUES ($1, $2, $3) RETURNING "id"[0m  [["setup", "Why did the scarecrow win an award?"], ["punchline", "Because he was outstanding in his field."], ["rating", 3]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "jokes" ("setup", "punchline", "rating") VALUES ($1, $2, $3) RETURNING "id"  [["setup", "Jim: \"I think that was the most beautiful wedding I've been to.\" Sally: \"Why's that?\""], ["punchline", "Jim: \"Even the cake was in tiers!\""], ["rating", 4]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "jokes" ("setup", "punchline", "rating") VALUES ($1, $2, $3) RETURNING "id"[0m  [["setup", "My father was reversing his car out of the driveway"], ["punchline", "He says to me \"This really takes me back\""], ["rating", 5]]
+  [1m[35m (1.3ms)[0m  COMMIT
+
+
+Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-06 14:42:47 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::JokesController#index as API_JSON
+  [1m[35mJoke Load (0.9ms)[0m  SELECT "jokes".* FROM "jokes"  ORDER BY "jokes"."id" ASC
+Completed 200 OK in 22ms (Views: 0.7ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-06 14:44:56 -0500
+Processing by Api::V1::JokesController#index as API_JSON
+  [1m[36mJoke Load (0.4ms)[0m  [1mSELECT "jokes".* FROM "jokes"  ORDER BY "jokes"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-06 14:47:04 -0500
+Processing by Api::V1::JokesController#index as API_JSON
+  [1m[35mJoke Load (0.3ms)[0m  SELECT "jokes".* FROM "jokes"  ORDER BY "jokes"."id" ASC
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/jokes" for 127.0.0.1 at 2015-11-06 14:47:18 -0500
+Processing by Api::V1::JokesController#index as API_JSON
+  [1m[36mJoke Load (0.4ms)[0m  [1mSELECT "jokes".* FROM "jokes"  ORDER BY "jokes"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 0.4ms)

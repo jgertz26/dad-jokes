@@ -1,25 +1,29 @@
 require 'rails_helper'
-require 'pry'
 
-RSpec.describe Api::V1::JokesController, :type => :controller do
+RSpec.describe Api::V1::JokesController do
+
+  before do
+    request.headers["Content-Type"] = "application/vnd.api+json"
+    request.accept = "application/vnd.api+json"
+  end
+
   describe "GET /jokes" do
     it "returns all jokes" do
 
-      joke_1 = FactoryGirl.create(:joke)
-      joke_2 = FactoryGirl.create(:joke)
-      joke_3 = FactoryGirl.create(:joke)
-
-      jokes = [joke_1, joke_2, joke_3]
-      setups = jokes.map { |m| m["setup"]}
+      jokes = FactoryGirl.create_list(:joke, 3)
 
       get :index
 
       expect(response.status).to eq 200
 
-      body = JSON.parse(response.body)
-      gathered_setups = body["data"].map { |m| m["attributes"]["setup"] }
+      jokes_array = []
 
-      expect(setups).to match_array(gathered_setups)
+      jokes.each { |joke| jokes_array << joke_attributes(joke) }
+
+      expected_output = {"data" => jokes_array}
+
+      body = JSON.parse(response.body)
+      expect(body).to eq(expected_output)
     end
   end
 
@@ -31,8 +35,10 @@ RSpec.describe Api::V1::JokesController, :type => :controller do
 
       expect(response.status).to eq 200
 
+      expected_output = { "data" => joke_attributes(joke) }
+
       body = JSON.parse(response.body)
-      expect(body["data"]["attributes"]["punchline"]).to eq joke.punchline
+      expect(body).to eq expected_output
     end
   end
 
@@ -41,18 +47,30 @@ RSpec.describe Api::V1::JokesController, :type => :controller do
       joke = FactoryGirl.build(:joke)
 
       joke_attr = {
-        setup: joke.setup,
-        punchline: joke.punchline
+        "setup" => joke.setup,
+        "punchline" => joke.punchline,
+        "rating" => joke.rating
       }
-      # request_headers = {
-      #   "Accept" => "application/vnd.api+json",
-      #   "Content-Type" => "application/vnd.api+json"
-      # }
 
-      post :create, joke: joke_attr
-
+      expected_output = { "data" => joke_attr }
+      post :create, expected_output
+      binding.pry
       expect(response.status).to eq 201
       expect(Joke.all.count).to eq 1
     end
   end
+end
+
+def joke_attributes(joke)
+  joke_attr = {}
+  joke_attr["id"] = "#{joke.id}"
+  joke_attr["type"] = "jokes"
+  joke_attr["links"] = {"self" => "http://test.host/api/v1/jokes/#{joke.id}"}
+  joke_attr["attributes"] = {
+    "setup" => joke.setup,
+    "punchline" => joke.punchline,
+    "rating" => joke.rating
+  }
+
+  joke_attr
 end

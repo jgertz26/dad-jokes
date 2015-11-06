@@ -6,9 +6,12 @@ export default Ember.Controller.extend({
 
       var setup = this.get('setup');
       var punchline = this.get('punchline');
+      var rating = this.get('rating');
+
       var joke = this.store.createRecord('joke', {
         setup: setup,
-        punchline: punchline
+        punchline: punchline,
+        rating: rating
       });
 
       var thisPage = this

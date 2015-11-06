@@ -3,7 +3,7 @@
 <div class="jokes-container">
   {{#each model as |joke|}}
     <div>
-      <p>{{link-to (format-setup joke.setup) 'jokes.show' joke}}</p>
+      <p>{{link-to (format-setup joke.setup) 'jokes.show' joke}} - {{joke.rating}}</p>
     </div>
   {{/each}}
 </div>

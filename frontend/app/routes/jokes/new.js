@@ -7,6 +7,7 @@ export default Ember.Route.extend({
       controller.set('validationErrors', false);
       controller.set('setup', "");
       controller.set('punchline', "");
+      controller.set('rating', "");
     }
   }
 });
